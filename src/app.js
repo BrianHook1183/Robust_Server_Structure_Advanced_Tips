@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
 const notesRouter = require("./notes/notes.router");
+const ratingsRouter = require("./ratings/ratings.router");
 
 app.use(express.json());
+app.use("/ratings", ratingsRouter);
 app.use("/notes", notesRouter);
 
 // Not found handler
